@@ -7,6 +7,7 @@ from Player import *
 
 def introduction():
     print("\nWell then " + Player.name + " welcome to Martinsville, Conneticut.")
+    print("")
     input("press enter to continue... ")
     # print("\nI am the mayor, Toby Adams. I am also the one who hired you.")
     # input("")
@@ -22,6 +23,7 @@ def introduction():
     # input("")
     # print("On November 17, 1992, however, Dubois suddenly dissapeared.")
     print("On November 17, 1992, Pierre Dubois, the owner of the Dubois estate up the hill mysteriously dissapeared.") 
+    input("")
     print("Some poeple here like to say that a mystery man visiited that night, but no one is really sure what happened to him.")
     
     input("")
@@ -29,18 +31,21 @@ def introduction():
     print("Dubois was an avid collector of artifacts. Especially those that he though to be cursed or holy.")     
     input("")
     print("Ever since his dissapearance, the town has been plagued with misfortunes. We attribute it to the Dubois estate.")
+    input("")
     print("The people of the town have tried to rid themselves of the curse of the Dubois Estate for many years, but no attempts have been successful.") 
     input("")
     print("The issue is, the only time anyone is able to enter the house is on the eve of Dubois's disspearance.")
+    input("")
     print("The brave (or stupid, depending who you ask) voulenteers who try and break the curse from the source, often return... changed...")
-    print("if they return at all.")
+    input("")
+    print("If they return at all.")
 
     input("")
 
     print("Now, 30 years later, you have been hired to clear out the Dubois estate, and hopefully break the curse.")
+    input("")
     print("The question is... are you brave enough to try?")
     print("")
-
 
     ans = input("type '1' to enter the house, or '2' to decline the challenge: ")
 
@@ -51,40 +56,37 @@ def introduction():
 
 def describeHouse():
     print("")
-    print("You make your way up an old stone bath, overgrown with shrubbery.")
+    print("You make your way up an old stone path.")
+    input("")
     print("Up ahead, you see a tall wrought iron gate.")
+    input("")
     print("You push on the gate, and it swings open to reveal the facade of the Dubois manor.")
+
     
     print("")
-
-    sleep(1)
     input("press enter to continue... ")
-
     print("")
 
-    print("Dark windows stare down at you as you make your way along the flagstone path")    
     print("The dark brick exterior looms over you. As you step onto the front step, the large oak door swings open...")
     
     print("")
-
-    sleep(1)
     input("press enter to step inside")
-
     print("")
+
     print("The entryway in front of you is dark... ")
+    input("")
     print("As soon as you step across the threshold, the door slams shut behind you.")
+    input("")
     print("You whirl around to face the door, and your flashlight lands on a lightswitch")
-
-    print("")
-
-    sleep(1)
-    input("press enter to try the lightswitch")
-
-    print("")
-
-    print("The lights slowly flicker on, revealing a large entrance hall, full of strange items.\n")
     input("")
 
+
+    print("")
+    input("press enter to try the lightswitch")
+    print("")
+
+    print("The lights slowly flicker on, revealing a large entrance hall, full of strange items.")
+    input("")
     print("you look around, and take better stock of your bearings.")
     input("")
     print("To the West (left), a solid wood door stands closed. Next to it, a painting hangs.")
@@ -98,12 +100,25 @@ def describeHouse():
 
 def skipBackstory():
     print("\nYou make your way up to the house. It is desolate like the town people described.")
-    print("You pass through the open gate, and push on the door. \nIt swings open easily.")
-    print("\nYou step inside, and just as you cross the threshold, the door slams shut.")
-    input("press enter to continue... \n")
-    print("You push on the door, but it is locked. \nYou feel along the wall, and find a lightswitch to your right. \nThe light flickers on.\n")
     input("")
-    print("you look around, and take better stock of your bearings.")
+    print("You pass through the open gate, and push on the door.")
+    input("")
+    print("It swings open easily.")
+    input("")
+    print("You step inside, and just as you cross the threshold, the door slams shut.")
+
+    print("")
+    input("press enter to continue...")
+
+    print("")
+
+    print("You push on the door, but it is locked.")
+    input("")
+    print("You feel along the wall, and find a lightswitch to your right.")
+    input("")
+    print("The light flickers on.")
+    input("")
+    print("You look around, and try to get your bearings.")
     input("")
     print("To the West (left), a solid wood door stands closed. Next to it, a painting hangs.")
     input("")
@@ -113,7 +128,7 @@ def skipBackstory():
     input("")
 
 def describeHall():
-    print("you look around, and take better stock of your bearings.")
+    print("You look around, and try to get your bearings")
     input("")
     print("To the West (left), a solid wood door stands closed. Next to it, a painting hangs.")
     input("")
@@ -128,6 +143,7 @@ def describeStudy():
     print("You walk to the front of the room, where a large desk is covered in peices of paper.")
     input("")
     print("You turn to survey the room, the desk now behind you.")
+    input("")
     print("To the West (left), there is a closed wood paneled door.")
     input("")
     print("To the East (right), a large armchair sits next to a fire place, still covered in soot.")
@@ -140,9 +156,13 @@ def describeLounge():
     print("You walk to the South of the room, where a large sword hangs from the wall.")
     input("")
     print("You turn and face North, surveying the room.")
-    print("The walls are paneled in dark wood, making the room seem smaller than it is. \nA couch and chairs surround a coffee table which still has drink glasses on it...")
     input("")
-    print("To the East (Right), there is a solid wood door. \nNext to it, there is a large cabinate.")
+    print("A couch and chairs surround a coffee table which still has drink glasses on it...")
+    input("")
+    print("To the East (Right), there is a solid wood door.")
+    input("")
+    print("Next to it, there is a large cabinate.")
+    input("")
     print("To the North (ahead), there is a dark green door with an ornate gold dornob.")
     input("")
 
@@ -150,11 +170,13 @@ def describeDining():
     print("You enter what seems to be the house's dining room.")
     input("")
     print("In the center of the room, there is a large table, fully set for a fancy meal.")
+    input("")
     print("You circle it so that you are at the head, and can get a better grasp of your surroundings.")
     input("")
     print("Behind you (South), there are closed double doors.")
     input("")
-    print("To the East of the room (Right), there is a large buffet cabinate, with many drawers. \nNext to it, there is a slim door, painted dark red.")
+    print("To the East of the room (Right), there is a large buffet cabinate, with many drawers.")
+    print("Next to it, there is a slim door, painted dark red.")
     input("")
     print("To the West (Left) of the room, there is a door with a purple handle.")
     input("")
@@ -169,9 +191,11 @@ def describeLibrary():
     input("")
     print("To the East (right), there is a stand alone shelf packed with books.")
     input("")
-    print("To the North (ahead of you), there is a navy coloured door. \nThe wall surrounding it is decorated with old book posters. ")
+    print("To the North (ahead of you), there is a navy coloured door.")
     input("")
-    print("To the West (left), there is a dark red door. \nNext to it, there is a shelf with only three books.")
+    print("To the West (left), there is a dark red door.")
+    input("")
+    print("Next to it, there is a shelf with only three books.")
 
 def describeBilliard():
     print("You find your self in a room with a billiard table.")
@@ -206,7 +230,9 @@ def describeKitchen():
     input("")
     print("To the West, there is a black door.")
     input("")
-    print("To the North, there is a counter with a few drawers. \nOn the counter, there is a framed photo.")
+    print("To the North, there is a counter with a few drawers.") 
+    input("")
+    print("On the counter, there is a framed photo.")
 
 def describeConservatory():
     print("You enter a warm room. It has many plants. It seems like a conservatory.")
@@ -222,7 +248,7 @@ def describeConservatory():
     print("In the center of the room, there is a glass table, with a white orchard on top.")
 
 def describeGarden():
-    print("You walk out of the conservatory, and into a large garden. \nThe wrought iron door is now behind you.")
+    print("You walk out of the conservatory, and into a large garden. The wrought iron door is now behind you.")
     input("")
     print("The plants are very overgrown, but you can make out a few objects.")
     input("")
@@ -239,14 +265,16 @@ def describeAttic():
     input("")
     print("You look out the window, and realize you must be in the attic.")
     input("")
-    print("You look around the room. \nTo the South, the mirror you passed through.")
+    print("You look around the room.")
+    input("")
+    print("To the South, the mirror you passed through.")
     input("")
     print("To the West, you see a map on the wall.")
     input("")
     print("To the North, there is a mirror identical to the golden one but with a silver frame.")
     input("")
 
-def descripbeCrypt():
+def describeCrypt():
     print("You enter the crypt. In the center of the room, there is a wooden coffin.")
     input("")
 
@@ -254,7 +282,9 @@ def descripbeCrypt():
 def describeBushes():
     print("You push through the bushes, and find yourself in a small clearning, surrounded by the overgrown bushes.")
     input("")
-    print("In front of you, there is a small stone building.\nIt has a pointed roof, and two columns that flank the stone door.")
+    print("In front of you, there is a small stone building.")
+    input("")
+    print("Two columns that flank the stone door.")
     input("")
 
 def curseBreak():

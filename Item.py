@@ -45,7 +45,11 @@ class HauntedItem(Item):
         player.hp -= self.damage
 
         print(self.description)
-        return "THIS ITEM IS HAUNTED. You lost " + str(self.damage) + "HP. \nYOUR HP IS NOW " + str(player.hp)
+        input("\npress enter to continue...\n")
+        if player.hp > 0:
+            return "THIS ITEM IS HAUNTED. You lost " + str(self.damage) + "HP. \nYOUR HP IS NOW " + str(player.hp)
+        if player.hp <= 0:
+            return "THIS ITEM IS HAUNTED."
 
 class HolyItem(Item):
     def __init__(self, name, holyness):
@@ -57,13 +61,16 @@ class HolyItem(Item):
         player.hp += self.holyness
         player.room.locations.remove(self)
 
-        print(self.description)
-        return "THIS ITEM IS HOLY, it will protect you from " + str(self.holyness) + "HP damage. \nYOUR HP IS NOW " + str(player.hp)
+        # print(self.description)
+        input("\npress enter to continue...\n")
+
+        return "THIS ITEM IS HOLY, it will protect you from " + str(self.holyness) + "HP damage."
 
 
 class SuperDuperHolyThing(HolyItem):
-    def __init__(name, self, holyness):
-        super().__init__(name)
+    def __init__(self, name, holyness):
+        self.name = name
+        self.description = ""
         self.Holy = True
         self.holyness = holyness
 
@@ -74,5 +81,7 @@ class SuperDuperHolyThing(HolyItem):
         player.cursed = False
 
         curseBreak()
+
+        print("curse broken")
 
 

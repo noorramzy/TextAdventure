@@ -37,12 +37,37 @@ class LockedDoor(Door):
             for item in player.inventory:
                 if item.name.lower() == self.keyName:
                     self.isLocked = False
-                    self.enter(player)
-                    return "you unlocked the door and walked through\n" 
+                    print("\n---------------------\n")
+                    print("you unlocked the door using the  " + self.keyName + " and walked through\n" )
+                    return self.enter(player)
             return "This door is locked, you need a key. \nIf you have a key, make sure it is the right one"
- 
+        
         else:
             return self.enter(player)
+
+
+
+class LockedBehindYouDoor(Door):
+    def __init__(self, name, roomOne, roomTwo, keyName, otherKeyName):
+        self.name = name
+        self.roomOne = roomOne
+        self.roomTwo = roomTwo
+        self.keyName = keyName
+        self.otherKeyName = otherKeyName
+        self.isLocked = True
+
+    def inspect(self, player):
+        if self.isLocked:
+            for item in player.inventory:
+                if item.name.lower() == self.keyName:
+                    print("\n---------------------\n")
+                    print("you unlocked the door using the  " + self.keyName + " and walked through\n" )
+                    self.keyName = self.otherKeyName
+                    return self.enter(player)
+            return "This door is locked, you need a key. \nIf you have a key, make sure it is the right one"
+        else:
+            return self.enter(player)
+
 
 
 class SeceretDoor(Door):
@@ -60,8 +85,9 @@ class SeceretDoor(Door):
             return self.roomOne.enter(player)
 
     def inspect(self, player):
-        self.enterRoom(player)
-        return "You found a seceret passageway\n" 
+        print("You found a seceret passageway\n")
+        self.enter(player)
+        return "" 
            
 
 class SeceretLockedDoor(SeceretDoor):
@@ -77,8 +103,9 @@ class SeceretLockedDoor(SeceretDoor):
             for item in player.inventory:
                 if item.name.lower() == self.keyName:
                     self.isLocked = False
+                    print("You found a seceret passage way! \nUsing the " + self.keyName + ", you unlocked the door.\n")
                     self.enter(player)
-                    return "You found a seceret passage way! \nUsing the " + self.keyName + ", you unlocked the door.\n" 
+                    return ""
             return "You seem to be on to something, but you are missing a crucial item."
  
         else:

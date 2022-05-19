@@ -1,12 +1,15 @@
 #from Util import myPrint
 
+from Item import TakableThing
+
+
 MAX_HP = 10
 
 class Player:
     def __init__(self, name):
         self.name = name
         self.hp = MAX_HP
-        self.inventory = []
+        self.inventory = [TakableThing("green key"), TakableThing("iron key")]
         self.room = None
         self.cursed = True
     

@@ -47,10 +47,14 @@ def startGame():
     #         break
     
     #     elif yn.lower()== "yes":
-    #         print("\nGood. Then we can skip the backstory.\nKeep your wits about you. \nI wish you luck.\n")
+    #         print("\nGood. Then we can skip the backstory.")
+    #         input("")
+    #         print("Keep your wits about you.")
+    #         input("")
+    #         print("I wish you luck.")
+    #         input("")
     #         input("\npress enter to continue... ")
-    #         print("")
-            
+    #         print("\n---------------------")
     #         skipBackstory()
             
     #         break
@@ -63,7 +67,7 @@ def startGame():
 startGame()
 
 hall.addDoor(front, "front door", True, "gold key")
-p.room = conservatory
+p.room = hall
 #p.enterRoom(hall)
 
 hall.addDoor(study, "paneled door", True, "white key")
@@ -93,7 +97,7 @@ conservatory.addDoor(garden, "wrought iron door", True, "skeleton key")
 garden.addDoor(back, "iron gate", True, "iron key")
 garden.addSeceretDoor(bushes, "bushes", False, "none")
 
-bushes.addDoor(crypt, "crypt door", True, "green key")
+bushes.addCloseBehindYouDoor(crypt, "crypt door", True, "green key", "gold key")
 
 #while what is true
 while True:
@@ -101,6 +105,7 @@ while True:
 
         if p.cursed == True:
             print("You made it out alive, but the curse is not broken!")
+            sleep(1)
             print("Do you want to return to the house and try to break it?")
 
             choice = input("Type '1' to return to the garden. Type '2' to leave the house: ")
@@ -114,6 +119,7 @@ while True:
         else:
             print("You broke the curse and made it out alive!")
             print("The town of Martinsville thanks you " +  p.name)
+            print("")
 
         break
     if p.hp <= 0:
@@ -136,14 +142,19 @@ while True:
             print(str(i) + '. ' + item.name)
             i += 1
         print('Which would you like to inspect?')
-        idx = int(input())
+        
+        idx = input()
         print("")
 
 #DIE
-        if idx <= len(p.room.locations):
-            print(p.room.locations[idx-1].inspect(p))
-        elif idx >= len(p.room.locations) and idx <= len(p.room.locations)+len(p.room.doors):
-            print(p.room.doors[idx-len(p.room.locations)-1].inspect(p))
+        if idx == "":
+            print("Not a valid input!!!!")
+        # elif type(int(idx)) != int:
+        #     print("Not a valid input!!!!")
+        elif int(idx) <= len(p.room.locations):
+            print(p.room.locations[int(idx)-1].inspect(p) or "")
+        elif int(idx) >= len(p.room.locations) and int(idx) <= len(p.room.locations)+len(p.room.doors):
+            print(p.room.doors[int(idx)-len(p.room.locations)-1].inspect(p) or "")
         else:
             print("That is not a valid input, please try again.")
 

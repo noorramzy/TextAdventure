@@ -35,15 +35,14 @@ class LockedOpenableThing(OpenableThing):
         self.keyName = keyName
         self.description = ""
 
-    
     def inpect(self, player):
-          if self.isLocked == True:
+          if self.isLocked:
             for item in player.inventory:
                 if item.name.lower() == self.keyName:
                     self.isLocked = False
                     for item in self.contents:
                         player.room.locations.append(item)
-                    return "you opened the " + self.name + ". \nIt contains: " + ", ".join([item.name for item in self.contents])
+                        return "you opened the " + self.name + ". \nIt contains: " + ", ".join([item.name for item in self.contents])
             return "This" + self.name + " is locked, you need a key. \n if you have a key, make sure it is the right one"
 
 
